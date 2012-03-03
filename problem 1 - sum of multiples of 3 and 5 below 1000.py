@@ -6,3 +6,4 @@ result = 0
 result = sum(multiples)
 print result 
 print test
+print test2
