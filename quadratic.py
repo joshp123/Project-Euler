@@ -18,7 +18,7 @@ def quadratic(a,b,c):
 	root1 = (-b + sqrt(det))/(2*a)
 	root2 = (-b - sqrt(det))/(2*a)
 	root1 = round(root1.real,2) + 1j*round(root1.imag,2)
-	root2 = round(root2.real,2) + 1j*round(root2.imag,2)
+	root2 = round(root2.real,2) - 1j*round(root2.imag,2)
 	if(det > 0):
 		print 'There are 2 real roots of this equation, they are: \nx =', root1, '\nx =', root2
 	elif(det == 0):
