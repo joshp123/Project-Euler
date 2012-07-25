@@ -11,7 +11,6 @@ def scoreName(name):
 
 
 def main():
-    # names = []
     with open('names.txt', 'rbU') as f:
         namelist = f.read()
         names = string.split(namelist, ",")
@@ -19,7 +18,7 @@ def main():
     names.sort()
 
     score = 0
-    print len(names)
+
     for i in xrange(0, len(names)):
         score = score + (scoreName(names[i]) * (i + 1))
 
