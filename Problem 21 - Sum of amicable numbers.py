@@ -41,10 +41,8 @@ def main():
         else:
             a, b = isAmicable(x)
             if a == True:
-                print x, b
                 amicable_numbers.append(x)
                 amicable_numbers.append(b)
-    print amicable_numbers
     print 'The sum of the amical numbers up to 10000 is: ' + repr(int(sum(amicable_numbers)))
 
 if __name__ == '__main__':
