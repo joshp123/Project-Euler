@@ -7,7 +7,7 @@ def getSumDivisors(x):  # function to get the sum of the numbers that divide eve
 
     divisors = []
 
-    for i in xrange(1,int(sqrt(x))):  # only test up to sqrt(x) to be efficient
+    for i in xrange(1, int(sqrt(x))):  # only test up to sqrt(x) to be efficient
         if x % i == 0:  # if x%i = 0, it evenly divides, so append i and its partner factor, x/i
             divisors.append(i)
             if x / i != x:  # this shouldn't be necessary (it would only happen if i is sqrt(x) ) but just incase i fucked something up lolz
@@ -28,15 +28,22 @@ def isAmicable(x):  # if the sum of divisors of x = a, and the sum of divisors o
     # print b
 
     if b == x:
-        return True
+        return True, a
     else:
-        return False
+        return False, -1
 
 
 def main():
-    isAmicable(220)
-    pass
-
+    amicable_numbers = []
+    for x in xrange(1, 10000):
+        if x in amicable_numbers:  # if  x isn't in the array of amicable numbers, test, otherwise just skip to next to save time
+            continue
+        else:
+            a, b = isAmicable(x)
+            if a == True:
+                amicable_numbers.append(x)
+                amicable_numbers.append(b)
+    print 'The sum of the amical numbers up to 10000 is: ' + repr(int(sum(amicable_numbers)))
 
 if __name__ == '__main__':
     main()
